@@ -82,4 +82,4 @@ Ensure the Arduino is connected to the correct serial port and the port is avail
 
 - Original Duck Hunt logic forked ,modified and inspired by [Original Python Duck Hunt Repository](https://github.com/aosyborg/duckhunt)  
 - This project is a modified version with added motion control and custom hardware input.
-- License: MIT (or specify appropriate license)
+
