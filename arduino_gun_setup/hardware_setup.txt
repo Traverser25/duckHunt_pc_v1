@@ -1,0 +1,55 @@
+
+Description:
+This setup uses an MPU6050 accelerometer/gyroscope module and a push button to monitor acceleration on the X and Y axes, 
+while toggling a state using a digital input (button).
+ The button input uses an internal pull-up resistor and disables output for 100ms upon press. 
+Output is sent to the Serial Monitor in the format: xAcc,yAcc,state.
+
+--------------------------------------------------------------------------------
+🔌 Wiring Diagram
+--------------------------------------------------------------------------------
+
+MPU6050 to Arduino (I2C Communication)
+--------------------------------------
+MPU6050 VCC  -> Arduino 5V
+MPU6050 GND  -> Arduino GND
+MPU6050 SDA  -> Arduino A4   // SDA pin on Uno/Nano
+MPU6050 SCL  -> Arduino A5   // SCL pin on Uno/Nano
+
+> If using Arduino Mega:
+> MPU6050 SDA -> Pin 20
+> MPU6050 SCL -> Pin 21
+
+Push Button to Arduino Pin 7
+----------------------------
+One leg of button   -> Arduino Pin 7
+Other leg of button -> Arduino GND
+
+> No external resistor is needed as the pin uses INPUT_PULLUP mode.
+
+--------------------------------------------------------------------------------
+💡 How It Works
+--------------------------------------------------------------------------------
+
+1. The MPU6050 is initialized via I2C and begins sending acceleration data.
+2. The push button is connected to pin 7 and monitored using internal pull-up.
+3. When the button is pressed (logic LOW), the system enters a "disabled" state.
+4. For 100 milliseconds, the system sends a "0" in the state field, then resumes.
+5. Acceleration data (x, y) and state (1 = active, 0 = disabled) is printed via Serial.
+
+--------------------------------------------------------------------------------
+🧪 Output Format (Serial Monitor)
+--------------------------------------------------------------------------------
+
+Example:
+0.01,0.02,1
+0.01,0.03,1
+0.00,0.02,0   <-- (100ms after button press)
+0.01,0.02,1
+
+--------------------------------------------------------------------------------
+🔋 Power Supply Notes
+--------------------------------------------------------------------------------
+
+- Power the Arduino via USB or 5V external power.
+- MPU6050 modules usually have onboard voltage regulators and support 3.3V–5V input.
