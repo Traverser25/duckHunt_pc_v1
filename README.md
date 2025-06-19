@@ -4,16 +4,17 @@ A motion-controlled version of the classic Duck Hunt game, adapted for laptops u
 
 
 
-## 🎥 Demo
+<h2>🎥 <a href="https://www.reddit.com/r/developersIndia/comments/1jjcxyw/i_modified_duck_hunt_game_to_play_with_self_made/" target="_blank">▶️ Watch Gameplay Demo (Click Here)</a></h2>
 
-[Watch Gameplay Demo](https://www.reddit.com/r/developersIndia/comments/1jjcxyw/i_modified_duck_hunt_game_to_play_with_self_made/)  
+---
 
+<h2>🖼️ Gameplay Screenshot</h2>
 
+<p align="center">
+  <img src="video_assests/gamepic.png" alt="Gameplay Screenshot" width="600">
+</p>
 
-## 🖼️ Gameplay Screenshot
-
-![Gameplay Screenshot](video_assests/gamepic.png)
-
+---
 
 ## 🎯 Overview
 
